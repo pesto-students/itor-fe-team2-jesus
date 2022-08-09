@@ -1,0 +1,20 @@
+input{
+    padding: 0px 16px 0px 48px;
+    width: 50%;
+    min-width: 60px;
+    border-radius: 10px;
+    height: 48px;
+    border: solid 1px lightgrey;
+    margin: 5% 0;
+}
+
+.icon{
+    text-align: center;
+}
+
+.search_icon{
+    position: relative;
+    top: 10px;
+    left: 40px;
+    fill: #395B64 !important;
+}
