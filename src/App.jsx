@@ -1,10 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Routes, Route } from "react-router-dom";
-import FindAMentor from './modules/FindAMentor/FindAMentor'
-import Home from './modules/Home/Home'
-import Login from "./modules/Login/Login";
-import Register from "./modules/Register/Register";
+import { Routes, Route } from 'react-router-dom';
+import FindAMentor from './modules/FindAMentor/FindAMentor';
+import Home from './modules/Home/Home';
+import Login from './modules/Login/Login';
+import Register from './modules/Register/Register';
 
 function App() {
   return (
@@ -19,6 +19,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

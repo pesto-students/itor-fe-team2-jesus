@@ -1,7 +1,7 @@
-import Header from "../../components/Header/Header";
-import "./Home.css";
-import main from "../../assets/home_1.png";
-import Explore from "../../components/Explore/Explore";
+import Header from '../../components/Header/Header';
+import './Home.css';
+import main from '../../assets/home_1.png';
+import Explore from '../../components/Explore/Explore';
 
 export default function Home() {
   return (

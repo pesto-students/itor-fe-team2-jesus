@@ -1,9 +1,7 @@
 const initState = {
-    posts: []
-}
+  posts: [],
+};
 
-const rootReducer = (state = initState, action) =>{
-    return state;
-}
+const rootReducer = (state = initState, action) => state;
 
 export default rootReducer;
