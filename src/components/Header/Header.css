@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 3% 4%
 }
 
 .header_left{
@@ -41,4 +42,8 @@
 .nav_link{
     text-decoration: none;
     color: black;
+}
+
+.logo{
+    height: 60px
 }

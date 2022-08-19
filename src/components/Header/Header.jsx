@@ -9,7 +9,7 @@ function Header() {
     <>
       <div className="header_wrapper">
         <div className="header_left">
-          <img src={itor_logo} alt="Itor Logo" />
+          <img className='logo' src={itor_logo} alt="Itor Logo" />
           <Link className="nav_link" to="/">
            
             <h3>Home</h3>

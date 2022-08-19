@@ -18,7 +18,7 @@ function ExploreGrid() {
       columnSpacing={{ xs: 1, sm: 2, md: 3 }}
     >
       <Grid item md={3} xs={8}>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }} >
           <CardMedia
             component="img"
             height="280"
