@@ -1,0 +1,8 @@
+.home_body{
+    display: flex;
+    align-items: center;
+}
+
+.home_body, .home_reason{
+    margin: 5%;
+}
