@@ -1,32 +1,32 @@
-// {
-//     "env": {
-//         "browser": true,
-//         "es2021": true, 
-//         "jest": true
-//     },
-//     "extends": [
-//         "react-app",
-//         "react-app/jest",
-//         "airbnb",
-//         "plugin:prettier/recommended"
-//     ],
-//     "parserOptions": {
-//         "ecmaFeatures": {
-//             "jsx": true
-//         },
-//         "ecmaVersion": "latest",
-//         "sourceType": "module"
-//     },
-//     "plugins": [
-//         "react", "prettier"
-//     ],
-//     "rules": {
-//         "quotes": [
-//             "error",
-//             "double",
-//             {
-//                 "avoidEscape": true
-//             }
-//         ]
-//     }
-// }
+{
+    "env": {
+        "browser": true,
+        "es2021": true, 
+        "jest": true
+    },
+    "extends": [
+        "react-app",
+        "react-app/jest",
+        "airbnb",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react", "prettier"
+    ],
+    "rules": {
+        "quotes": [
+            "error",
+            "double",
+            {
+                "avoidEscape": true
+            }
+        ]
+    }
+}
