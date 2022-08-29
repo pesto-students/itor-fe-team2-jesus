@@ -1,15 +1,28 @@
-import React from 'react';
-import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import mentor1 from '../../assets/mentor_pics/01.jpg';
-import mentor2 from '../../assets/mentor_pics/02.jpg';
-import mentor3 from '../../assets/mentor_pics/03.jpg';
-import mentor4 from '../../assets/mentor_pics/04.jpg';
-import mentor5 from '../../assets/mentor_pics/05.jpg';
-import mentor6 from '../../assets/mentor_pics/06.jpg';
-import mentor7 from '../../assets/mentor_pics/07.jpg';
-import mentor8 from '../../assets/mentor_pics/08.jpg';
+import React from "react";
+import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import mentor1 from "../../assets/mentor_pics/01.jpg";
+import mentor2 from "../../assets/mentor_pics/02.jpg";
+import mentor3 from "../../assets/mentor_pics/03.jpg";
+import mentor4 from "../../assets/mentor_pics/04.jpg";
+import mentor5 from "../../assets/mentor_pics/05.jpg";
+import mentor6 from "../../assets/mentor_pics/06.jpg";
+import mentor7 from "../../assets/mentor_pics/07.jpg";
+import mentor8 from "../../assets/mentor_pics/08.jpg";
+import { useEffect } from "react";
 
 function ExploreGrid() {
+
+  const fetchData = ()=>{
+    fetch("https://itor-simple-node-api.herokuapp.com/api/v1/mentor/search", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }
+  useEffect(() => {
+    fetchData()
+  }, []);
+
   return (
     <Grid
       className="explore_grid"
@@ -18,7 +31,7 @@ function ExploreGrid() {
       columnSpacing={{ xs: 1, sm: 2, md: 3 }}
     >
       <Grid item md={3} xs={8}>
-        <Card sx={{ maxWidth: 345 }} >
+        <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
             height="280"

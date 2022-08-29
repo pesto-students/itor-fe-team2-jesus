@@ -1,6 +1,6 @@
-import React from 'react';
-import SearchIcon from '@mui/icons-material/Search';
-import './Search.css';
+import React from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import "./Search.css";
 
 function Search() {
   return (

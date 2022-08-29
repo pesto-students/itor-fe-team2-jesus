@@ -1,23 +1,23 @@
-import React from 'react';
-import itor_logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import './Header.css';
+import React from "react";
+import itor_logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import "./Header.css";
 
-const pages = ['Home', 'Find a mentor', 'Discussions'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ["Home", "Find a mentor", "Discussions"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -48,18 +48,18 @@ export default function Header() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            <img className='logo' src={itor_logo} alt="Itor Logo" />
+            <img className="logo" src={itor_logo} alt="Itor Logo" />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -74,18 +74,18 @@ export default function Header() {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
@@ -95,7 +95,7 @@ export default function Header() {
               ))}
             </Menu>
           </Box>
-          
+
           <Typography
             variant="h5"
             noWrap
@@ -103,24 +103,23 @@ export default function Header() {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-          <img className='logo' src={itor_logo} alt="Itor Logo" />
-
+            <img className="logo" src={itor_logo} alt="Itor Logo" />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
@@ -128,19 +127,18 @@ export default function Header() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-           
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
@@ -155,9 +153,8 @@ export default function Header() {
         </Toolbar>
       </Container>
     </AppBar>
-  )
+  );
 }
-
 
 // function Header() {
 //   return (
@@ -166,11 +163,11 @@ export default function Header() {
 //         <div className="header_left">
 //           <img src={itor_logo} alt="Itor Logo" />
 //           <Link className="nav_link" to="/">
-           
+
 //             <h3>Home</h3>
 //           </Link>
 //           <Link className="nav_link" to="/findAMentor">
-            
+
 //             <h3>Find A Mentor</h3>
 //           </Link>
 //           <Link className="nav_link" to="/discussion">
@@ -181,7 +178,7 @@ export default function Header() {
 //         </div>
 //         <div className="header_right">
 //           <Link to="/register">
-            
+
 //             <Button variant="contained" className="register">
 //               Register
 //             </Button>

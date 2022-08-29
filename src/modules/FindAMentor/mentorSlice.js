@@ -1,18 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   data: [],
-}
+};
 
 export const mentorSlice = createSlice({
-  name: 'mentor',
+  name: "mentor",
   initialState,
-  reducers: {
-    
-  },
-})
+  reducers: {},
+});
 
 // Action creators are generated for each case reducer function
-export const {} = mentorSlice.actions
+export const {} = mentorSlice.actions;
 
-export default mentorSlice.reducer
+export default mentorSlice.reducer;

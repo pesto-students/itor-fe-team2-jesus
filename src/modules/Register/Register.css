@@ -1,0 +1,14 @@
+.register_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_container{
+    text-align: center;
+    margin: 7% 3%;
+}
+
+.register_img{
+     height: 350px;   
+}
