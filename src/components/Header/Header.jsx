@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import itor_logo from "../../assets/logo.png";
 import { Button } from "@mui/material";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from '@mui/icons-material/Close';
 
 function Header() {
+  const [toggleHeaderMenu, setToggleHeaderMenu] = useState(false)
+
   return (
     <>
-      <div className="header_wrapper">
+      <div className="header_wrapper laptop">
         <div className="header_left">
           <img className="logo" src={itor_logo} alt="Itor Logo" />
           <Link className="nav_link" to="/">
@@ -23,6 +27,11 @@ function Header() {
           </Link>
         </div>
         <div className="header_right">
+          <Link className="nav_link" to="/become-a-mentor">
+            <div className="discussion">
+              <h3>Become a Mentor</h3>
+            </div>
+          </Link>
           <Link to="/register">
             <Button variant="contained" className="register">
               Register
@@ -34,6 +43,16 @@ function Header() {
             </Button>
           </Link>
         </div>
+      </div>
+      <div className="mobile_header mobile">
+        {toggleHeaderMenu ? <CloseIcon fontSize="large" onClick={() => setToggleHeaderMenu(!toggleHeaderMenu)}/> : <MenuIcon fontSize="large" onClick={() => setToggleHeaderMenu(!toggleHeaderMenu)} /> }
+        
+        <img className="logo" src={itor_logo} alt="Itor Logo" />
+        <Link to="/login">
+          <Button variant="contained" className="login">
+            Login
+          </Button>
+        </Link>
       </div>
     </>
   );

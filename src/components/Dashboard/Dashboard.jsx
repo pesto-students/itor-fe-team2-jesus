@@ -8,8 +8,33 @@ import DashHome from "./DashHome";
 import { Link } from "@mui/material";
 import DashMessage from "./DashMessage";
 import Bookings from "./Bookings";
+import { Logout } from '@mui/icons-material';
+import axios from "axios";
 
 function Dashboard() {
+
+  const logout = (e) => {
+    const configuration = {
+      method: "get",
+      url: "https://itor-simple-node-api.herokuapp.com/api/v1/logout",
+    };
+    axios(configuration)
+    .then((result) => {
+      console.log(result)
+      if (result.data.success) {
+        localStorage.removeItem("token")
+        navigate("/login");
+      } else {
+        setMessage(result.data.message)
+        navigate("/login");
+      }
+    })
+    .catch((error) => {
+      error = new Error();
+    });
+  }
+
+
   return (
     <div>
       <DashboardHeader />
@@ -23,26 +48,26 @@ function Dashboard() {
           <Link to="/userDashboard/home">
             <div className="side_bar_item">
               <HomeIcon fontSize="large" />
-              <p className="side_text">Home</p>
+              <a className="side_text">Home</a>
             </div>
           </Link>
-          <Link to="/userDashboard/message">
+         
+          <Link>
             <div className="side_bar_item">
-              {" "}
               <HomeIcon fontSize="large" />
-              <p className="side_text">Messages</p>
+              <a className="side_text">Booking</a>
             </div>
           </Link>
           <Link>
             <div className="side_bar_item">
-              <HomeIcon fontSize="large" />
-              <p className="side_text">Booking</p>
+              <Logout fontSize="large" />
+              <a className="side_text" onClick={() => logout()}>Logout</a>
             </div>
           </Link>
         </aside>
-        {/* <DashHome /> */}
+        <DashHome />
         {/* <DashMessage /> */}
-        <Bookings />
+        {/* <Bookings /> */}
       </div>
     </div>
   );

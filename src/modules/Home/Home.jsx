@@ -21,7 +21,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <img src={main} alt="People talking" />
+          <img className='home_img' src={main} alt="People talking" />
         </div>
       </div>
       <Explore />

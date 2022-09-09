@@ -1,0 +1,44 @@
+.mentor_profile_wrapper{
+    margin: 5% 7%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_right{
+    width: 30%;
+    padding: 3% 7%;
+}
+
+.profile_details{
+    width: 70%;
+}
+
+.mentor_name{
+    display: flex;
+    align-items: center;
+}
+
+.mentor_name > img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.highlights{
+    background-color: #A5C9CA;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.language_fluent{
+    background-color: black;
+    color: white;
+}
+
+.social_links{
+    display: flex;
+}
