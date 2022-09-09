@@ -1,0 +1,31 @@
+.key_skills{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.discussion_wrapper{
+    margin: 2% 3%;
+}
+
+.user_img{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.questions{
+    display: flex;
+    margin: 5%;
+}
+
+.heading_margin{
+    margin-top: 0;
+}
+
+.bottom_questions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

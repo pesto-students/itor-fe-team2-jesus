@@ -1,13 +1,13 @@
-import React from 'react';
-import './Explore.css';
+import React from "react";
+import "./Explore.css";
 
-import Search from '../Search/Search';
-import ExploreGrid from '../ExploreGrid/ExploreGrid';
+import Search from "../Search/Search";
+import ExploreGrid from "../ExploreGrid/ExploreGrid";
 
 function Explore() {
   return (
     <div className="explore">
-      <h1 style={{ textAlign: 'center' }}>Explore our Mentors</h1>
+      <h1 style={{ textAlign: "center" }}>Explore our Mentors</h1>
       <Search />
       <ExploreGrid />
     </div>

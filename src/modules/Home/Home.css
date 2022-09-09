@@ -1,8 +1,22 @@
-.home_body{
-    display: flex;
-    align-items: center;
+.home_body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.home_body, .home_reason{
-    margin: 5%;
+.home_body,
+.home_reason {
+  margin: 5%;
+}
+
+
+.home_img{
+    width: 100%;
+}
+
+@media (min-width: 992px) and (orientation: landscape) {
+  .home_body {
+    flex-direction: row;
+    align-items: center;
+  }
 }

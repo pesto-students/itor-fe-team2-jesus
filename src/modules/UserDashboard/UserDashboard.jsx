@@ -1,10 +1,12 @@
 import React from "react";
-import Dashboard from '../../components/Dashboard/Dashboard';
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 function UserDashboard() {
-  return <div>
-    <Dashboard/>
-  </div>;
+  return (
+    <div>
+      <Dashboard />
+    </div>
+  );
 }
 
 export default UserDashboard;

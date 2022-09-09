@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function DashMessage() {
-  return (
-    <div>
-       Mesage 
-    </div>
-  )
+  return <div>Mesage</div>;
 }
 
-export default DashMessage
+export default DashMessage;
