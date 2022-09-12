@@ -2,53 +2,89 @@ import React, { useState, useEffect } from "react";
 import registerImg from "../../assets/help.png";
 import "./Register.css";
 import Header from "../../components/Header/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import { Box } from "@mui/material";
-import { hideLoading, showLoading } from "../../store/alertsSlice";
+import { useFormik } from "formik";
+import { signUpSchema } from "../../schemas";
+import Footer from '../Home/Footer';
 
 function UserRegisteration() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [calendlyLink, setCalendlyLink] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [schoolName, setSchoolName] = useState("");
   const [register, setRegister] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const configuration = {
-      method: "post",
-      url: "https://itor-simple-node-api.herokuapp.com/api/v1/signup",
-      data: {
-        email,
-        password,
-        name,
-        schoolName,
-      },
-    };
-    axios(configuration)
-      .then((result) => {
-        dispatch(hideLoading());
-        if (result.data.success) {
-          setMessage(result.data.message);
-          navigate("/login");
-        } else {
-          setMessage(result.data.message);
-          navigate("/login");
-        }
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+  const initialValues = {
+    name: "",
+    email: "",
+    password: "",
+    schoolName: "",
   };
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues,
+      validationSchema: signUpSchema,
+      validateOnChange: true,
+      validateOnBlur: false,
+      onSubmit: (values, action) => {
+        const configuration = {
+          method: "post",
+          url: "https://itor-simple-node-api.herokuapp.com/api/v1/signup",
+          data: values,
+        };
+        axios(configuration)
+          .then((result) => {
+            if (result.data.success) {
+              action.resetForm();
+              navigate("/login");
+              setRegister(true)
+            } else{
+              setMessage(result.data.message)
+              action.resetForm();
+
+            }
+          })
+          .catch((error) => {
+            error = new Error();
+          });
+        
+      },
+    });
+  console.log(
+    "🚀 ~ file: Registration.jsx ~ line 25 ~ Registration ~ errors",
+    errors,
+  );
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const configuration = {
+  //     method: "post",
+  //     url: "https://itor-simple-node-api.herokuapp.com/api/v1/signup",
+  //     data: {
+  //       email,
+  //       password,
+  //       name,
+  //       schoolName,
+  //     },
+  //   };
+  //   axios(configuration)
+  //     .then((result) => {
+  //       console.log('result', result)
+  //       dispatch(hideLoading());
+  //       if (result.data.success) {
+  //         setMessage(result.data.message);
+  //         navigate("/login");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log('error :>> ', error);
+  //       error = new Error();
+  //     });
+  // };
 
   return (
     <>
@@ -67,17 +103,21 @@ function UserRegisteration() {
             ) : (
               <Box sx={{ color: "error.main" }}>{message}</Box>
             )}
-            <form className="form_wrapper" onSubmit={(e) => handleSubmit(e)}>
+            <form className="form_wrapper" onSubmit={handleSubmit}>
               <TextField
                 id="name"
                 name="name"
                 label="Name"
                 variant="standard"
                 sx={{ width: "40ch" }}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />{" "}
               <br />
+              {errors.name && touched.name ? (
+                <p className="form-error">{errors.name}</p>
+              ) : null}
               <TextField
                 id="email"
                 name="email"
@@ -85,10 +125,14 @@ function UserRegisteration() {
                 variant="standard"
                 margin="normal"
                 sx={{ width: "40ch" }}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />{" "}
               <br />
+              {errors.email && touched.email ? (
+                <p className="form-error">{errors.email}</p>
+              ) : null}
               <TextField
                 id="password"
                 name="password"
@@ -97,10 +141,14 @@ function UserRegisteration() {
                 type="password"
                 margin="normal"
                 sx={{ width: "40ch" }}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />{" "}
               <br />
+              {errors.password && touched.password ? (
+                <p className="form-error">{errors.password}</p>
+              ) : null}
               <TextField
                 id="schoolName"
                 name="schoolName"
@@ -108,16 +156,19 @@ function UserRegisteration() {
                 sx={{ width: "40ch" }}
                 margin="normal"
                 variant="standard"
-                value={schoolName}
-                onChange={(e) => setSchoolName(e.target.value)}
+                value={values.schoolName}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />{" "}
               <br />
+              {errors.schoolName && touched.schoolName ? (
+                <p className="form-error">{errors.schoolName}</p>
+              ) : null}
               <Button
                 color="primary"
                 variant="contained"
                 type="submit"
                 sx={{ margin: "10px 0", width: "100%" }}
-                onClick={(e) => handleSubmit(e)}
               >
                 Register
               </Button>
@@ -125,6 +176,7 @@ function UserRegisteration() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -10,37 +10,38 @@ import axios from "axios";
 import { Box } from "@mui/material";
 import { hideLoading, showLoading } from "../../store/alertsSlice";
 
-function MentorRegisteration() {
+function UserRegisteration() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [calendlyLink, setCalendlyLink] = useState("");
   const [password, setPassword] = useState("");
-  const [YOE, setYOE] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [expertise, setExpertise] = useState("");
+  const [schoolName, setSchoolName] = useState("");
+  const [register, setRegister] = useState(false);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const configuration = {
       method: "post",
-      url: "https://itor-simple-node-api.herokuapp.com/api/v1/mentor/create",
+      url: "https://itor-simple-node-api.herokuapp.com/api/v1/signup",
       data: {
         email,
         password,
         name,
-        companyName,
-        expertise,
-        YOE,
+        schoolName,
       },
     };
     axios(configuration)
       .then((result) => {
-        result.data.success ? console.log("success") : console.log("failed");
+        dispatch(hideLoading());
+        if (result.data.success) {
+          setMessage(result.data.message);
+          navigate("/login");
+        }
       })
       .catch((error) => {
-        console.log("error-signup :>> ", error);
+        error = new Error();
       });
   };
 
@@ -49,7 +50,6 @@ function MentorRegisteration() {
       <Header />
       <div className="register_container">
         <h1>Register</h1>
-        {message}
         <div className="register_wrapper">
           <img
             className="register_img"
@@ -57,11 +57,11 @@ function MentorRegisteration() {
             alt="Register image"
           />
           <div>
-            {/* {register ? (
+            {register ? (
               <Box sx={{ color: "success.main" }}>{message}</Box>
             ) : (
               <Box sx={{ color: "error.main" }}>{message}</Box>
-            )} */}
+            )}
             <form className="form_wrapper" onSubmit={(e) => handleSubmit(e)}>
               <TextField
                 id="name"
@@ -97,47 +97,14 @@ function MentorRegisteration() {
               />{" "}
               <br />
               <TextField
-                id="companyName"
-                name="companyName"
-                label="Company Name"
+                id="schoolName"
+                name="schoolName"
+                label="School Name"
                 sx={{ width: "40ch" }}
                 margin="normal"
                 variant="standard"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-              />{" "}
-              <br />
-              <TextField
-                id="YOE"
-                name="YOE"
-                label="Years of experience"
-                sx={{ width: "40ch" }}
-                margin="normal"
-                variant="standard"
-                value={YOE}
-                onChange={(e) => setYOE(e.target.value)}
-              />{" "}
-              <br />
-              <TextField
-                id="expertise"
-                name="expertise"
-                label="expertise"
-                sx={{ width: "40ch" }}
-                margin="normal"
-                variant="standard"
-                value={expertise}
-                onChange={(e) => setExpertise(e.target.value)}
-              />{" "}
-              <br />
-              <TextField
-                id="calendlyLink"
-                name="calendlyLink"
-                label="Calendly Link"
-                sx={{ width: "40ch" }}
-                margin="normal"
-                variant="standard"
-                value={calendlyLink}
-                onChange={(e) => setCalendlyLink(e.target.value)}
+                value={schoolName}
+                onChange={(e) => setSchoolName(e.target.value)}
               />{" "}
               <br />
               <Button
@@ -157,4 +124,4 @@ function MentorRegisteration() {
   );
 }
 
-export default MentorRegisteration;
+export default UserRegisteration1;

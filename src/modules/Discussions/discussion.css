@@ -29,3 +29,8 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.answer_wrapper{
+    width: 40%;
+    margin: auto;
+}

@@ -5,7 +5,10 @@
 
 .dashboard_head{
     background: #2C3333;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 
 .mentor_image_rounded {

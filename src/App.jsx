@@ -12,6 +12,8 @@ import MentorRegisteration from './modules/Register/MentorRegisteration';
 import UserRegisteration from './modules/Register/UserRegisteration';
 import UserDashboard from "./modules/UserDashboard/UserDashboard";
 import Discussion from './modules/Discussions/Discussion';
+import AskQuestion from './modules/Discussions/AskQuestion';
+import Answer from './modules/Discussions/Answer';
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
         <Route path="/mentor/:id"element={<MentorProfile />}></Route>
         <Route path="/book-now" element={<CalendlyWidget/>}></Route>
         <Route path="/discussion" element={<Discussion />}></Route>
+        <Route path="/answer/:id" element={<Answer />}></Route>
       </Routes>
     </div>
   );
