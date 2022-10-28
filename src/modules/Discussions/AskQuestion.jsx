@@ -1,20 +1,11 @@
 import React, { useState } from "react";
-import Header from "../../components/Header/Header";
 import Button from "@mui/material/Button";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import { Box } from "@mui/material";
-import { hideLoading, showLoading } from "../../store/alertsSlice";
-import Footer from '../Home/Footer';
 
 function AskQuestion(props) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [question, setQuestion] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,11 +35,7 @@ function AskQuestion(props) {
         <h1>Ask a Question</h1>
         <div className="login_wrapper">
           <div>
-            {/* {login ? (
-              <Box sx={{ color: "success.main" }}>{message}</Box>
-            ) : (
-              <Box sx={{ color: "error.main" }}>{message}</Box>
-            )} */}
+           
             <form className="form_wrapper" onSubmit={(e) => handleSubmit(e)}>
               <TextField
                 id="title"
