@@ -1,0 +1,22 @@
+.dash_header_wrapper{
+    margin: 0;
+    padding: 1% 3%;
+}
+
+.dashboard_head{
+    background: #2C3333;
+}
+
+
+.mentor_image_rounded {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.dash_header_right{
+    display: flex;
+    align-items: center;
+    color: white;
+}
