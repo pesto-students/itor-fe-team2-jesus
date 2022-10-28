@@ -1,13 +1,7 @@
 import React from "react";
 import { InlineWidget, useCalendlyEventListener } from "react-calendly";
 
-const CalendlyWidget = () => {
-  useCalendlyEventListener({
-    onProfilePageViewed: () => console.log("onProfilePageViewed"),
-    onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
-    onEventTypeViewed: () => console.log("onEventTypeViewed"),
-    onEventScheduled: (e) => console.log(e.data.payload),
-  });
+const CalendlyWidget = ( { url } ) => {
   return (
     <div className="Calendly_wrapper">
       <InlineWidget
@@ -18,7 +12,7 @@ const CalendlyWidget = () => {
           primaryColor: "00a2ff",
           textColor: "4d5055",
         }}
-        url="https://calendly.com/mahi-khandelwal28"
+        url={url}
       />
     </div>
   );

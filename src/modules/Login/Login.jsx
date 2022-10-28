@@ -9,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import { Box } from '@mui/material';
 import { hideLoading, showLoading } from "../../store/alertsSlice";
+import Footer from '../Home/Footer';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,24 +31,20 @@ function Login() {
         password
       },
     };
-    dispatch(showLoading());
     axios(configuration)
     .then((result) => {
-      dispatch(hideLoading());
-      console.log(result)
       if (result.data.success) {
         setMessage(result.data.message)
         localStorage.setItem("token", result.data.token)
-
-        navigate("/");
+        setLogin(true)
+        navigate("/userDashboard");
       } else {
         setMessage(result.data.message)
-        navigate("/login");
+        
       }
     })
     .catch((error) => {
-      dispatch(hideLoading());
-      error = new Error();
+      console.log('error-login', error)
     });
   }
   return (
@@ -101,6 +98,7 @@ function Login() {
         
       </div>
     </div>
+    <Footer />
     </>
   );
 }

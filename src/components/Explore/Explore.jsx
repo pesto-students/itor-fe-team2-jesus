@@ -8,7 +8,6 @@ function Explore() {
   return (
     <div className="explore">
       <h1 style={{ textAlign: "center" }}>Explore our Mentors</h1>
-      <Search />
       <ExploreGrid />
     </div>
   );

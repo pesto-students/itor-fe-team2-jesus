@@ -20,3 +20,31 @@
     align-items: center;
   }
 }
+
+.footer{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #395b64;
+  margin: 0;
+  height: 50px;
+  color: white;
+  justify-content: space-between;
+  padding: 3%;
+  text-align: center;
+}
+
+.footer_link{
+  width: 25%;
+  color: white;
+  text-decoration: none;
+}
+
+.footer_description{
+  margin-bottom: 0;
+}
+
+.footer_logo{
+  height: 100%;
+}
+

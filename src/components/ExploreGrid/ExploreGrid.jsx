@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Card,CircularProgress, Box, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { useNavigate, Link } from "react-router-dom";
 
 function ExploreGrid() {
@@ -25,12 +25,26 @@ function ExploreGrid() {
       .catch((err) => {
         setError(err.message);
         setData(null);
-        console.log(error);
       })
       .finally(() => {
         setLoading(false);
       });
   }, []);
+
+  if(loading){
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+        }}
+      >
+        <CircularProgress color="success" />
+      </Box>
+    );
+  }
 
   return (
     <Grid
