@@ -57,34 +57,7 @@ function UserRegisteration() {
     });
   console.log(
     "🚀 ~ file: Registration.jsx ~ line 25 ~ Registration ~ errors",
-    errors,
-  );
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const configuration = {
-  //     method: "post",
-  //     url: "https://itor-simple-node-api.herokuapp.com/api/v1/signup",
-  //     data: {
-  //       email,
-  //       password,
-  //       name,
-  //       schoolName,
-  //     },
-  //   };
-  //   axios(configuration)
-  //     .then((result) => {
-  //       console.log('result', result)
-  //       dispatch(hideLoading());
-  //       if (result.data.success) {
-  //         setMessage(result.data.message);
-  //         navigate("/login");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log('error :>> ', error);
-  //       error = new Error();
-  //     });
-  // };
+    errors );
 
   return (
     <>
