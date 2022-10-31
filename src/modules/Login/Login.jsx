@@ -12,9 +12,9 @@ import { hideLoading, showLoading } from "../../store/alertsSlice";
 import Footer from '../Home/Footer';
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("mahi@hotmail.com");
 
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("Mahima123");
 
   const [login, setLogin] = useState(false);
   const [message, setMessage] = useState("")

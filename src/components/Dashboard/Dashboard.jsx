@@ -1,13 +1,10 @@
 import React from "react";
-import UserDashboard from "../../modules/UserDashboard/UserDashboard";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import mentor8 from "../../assets/mentor_pics/08.jpg";
 import HomeIcon from "@mui/icons-material/Home";
 import "./Dashboard.css";
 import DashHome from "./DashHome";
 import { Link, useNavigate } from "react-router-dom";
-import DashMessage from "./DashMessage";
-import Bookings from "./Bookings";
 import { Logout } from '@mui/icons-material';
 import axios from "axios";
 
@@ -23,9 +20,7 @@ const navigate = useNavigate()
       if (result.data.success) {
         localStorage.removeItem("token")
         navigate("/login");
-      } else {
-        setMessage(result.data.message)
-        navigate("/login");
+      } else {        navigate("/login");
       }
     })
     .catch((error) => {
@@ -49,8 +44,7 @@ const navigate = useNavigate()
               <HomeIcon fontSize="large" />
               <div className="side_text">Home</div>
             </div>
-          </Link> */}
-         
+          </Link> */}         
           <Link to='/discussion'>
             <div className="side_bar_item">
               <HomeIcon fontSize="large" />
