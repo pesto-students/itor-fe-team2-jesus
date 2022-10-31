@@ -12,14 +12,13 @@ import { hideLoading, showLoading } from "../../store/alertsSlice";
 import Footer from '../Home/Footer';
 
 function Login() {
-  const [email, setEmail] = useState("mahi@hotmail.com");
+  const [email, setEmail] = useState("pesto@project.com");
 
-  const [password, setPassword] = useState("Mahima123");
+  const [password, setPassword] = useState("9999999999");
 
   const [login, setLogin] = useState(false);
   const [message, setMessage] = useState("")
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
