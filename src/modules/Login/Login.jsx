@@ -19,7 +19,6 @@ function Login() {
   const [login, setLogin] = useState(false);
   const [message, setMessage] = useState("")
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
