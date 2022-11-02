@@ -2,6 +2,8 @@
 
 # Itor
 
+![Itor Logo](./src/assets/logo_light.png)
+
 - Itor is an application which connects the knowledge providers and knowledge receivers and help them schedule the calls with each other to get mentorship.
 - It also provides a platform where the users can ask and answer questions.
 
