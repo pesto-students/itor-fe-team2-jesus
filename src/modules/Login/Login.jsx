@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import loginImg from "../../assets/unlock.png";
 import "./Login.css";
 import Header from '../../components/Header/Header';
 import Button from "@mui/material/Button";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import { Box } from '@mui/material';
-import { hideLoading, showLoading } from "../../store/alertsSlice";
 import Footer from '../Home/Footer';
 
 function Login() {
@@ -52,7 +50,7 @@ function Login() {
     <div className='login_container'>
       <h1>Login</h1>
       <div className="login_wrapper">
-      <img className='login_img' src={loginImg} alt="Register image" />
+      <img className='login_img' src={loginImg} alt="Register icon" />
         <div>
         {login ? (
             <Box sx={{ color: 'success.main' }}>{message}</Box>

@@ -13,7 +13,7 @@ function Header() {
     <>
       <div className="header_wrapper laptop">
         <div className="header_left">
-          <img className="logo" src={itor_logo} alt="Itor Logo" />
+         <a href='/'> <img className="logo" src={itor_logo} alt="Itor Logo" /></a>
           <Link className="nav_link" to="/">
             <h3>Home</h3>
           </Link>
